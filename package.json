@@ -1,0 +1,24 @@
+{
+  "name": "websocket_test_case",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "serve",
+  "name": "ws_echo",
+    "start": "concurrently --kill-others \"npm run serve\" \"npm run start -w ws_echo\" \"npm run start2 -w ws_echo\" \"npm run start -w proxy\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "serve": "^13.0.2"
+  },
+  "workspaces": {
+    "packages": [
+      "proxy/",
+      "ws_echo/"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ws_echo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "SET PORT=1234 && node ./index.js",
+    "start2": "SET PORT=5678 && node ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-ws": "^5.0.2",
+    "ws": "^8.5.0"
+  }
+}

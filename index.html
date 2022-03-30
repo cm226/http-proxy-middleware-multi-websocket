@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="docs-version-current" lang="en" dir="ltr">
+<script type="module">
+  
+  const webSocket1 = new WebSocket('ws://localhost:8080/websocket1');
+  webSocket1.addEventListener('message', function (event) {
+    console.log('Message from server 1 ', event.data);
+  });
+
+  await fetch('http://localhost:8080/websocket1/')
+  
+  const webSocket2 = new WebSocket('ws://localhost:8080/websocket2');
+  webSocket2.addEventListener('message', function (event) {
+    console.log('Message from server 2 ', event.data);
+  });
+
+  webSocket1.addEventListener('open', ()=>{
+    webSocket1.send("hello1");  
+  })
+
+  webSocket2.addEventListener('open', ()=>{
+    webSocket2.send("hello2");  
+  })
+
+</script>
+
+</html>
